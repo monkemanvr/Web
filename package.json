@@ -1,0 +1,9 @@
+{
+  "name": "steammanilua",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Steam manifest and Lua launcher generator",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
