@@ -1,0 +1,27 @@
+{
+  "name": "beamng-drive-multiplayer-prototype",
+  "version": "0.2.0",
+  "description": "Prototype multiplayer relay app for BeamNG.drive using HTTP polling.",
+  "main": "src/server.js",
+  "type": "module",
+  "bin": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "build:win": "pkg . --targets node18-win-x64 --output dist/beamng-multiplayer-relay.exe"
+  },
+  "keywords": [
+    "beamng",
+    "multiplayer",
+    "prototype"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  },
+  "pkg": {
+    "assets": [
+      "public/**/*"
+    ]
+  }
+}
