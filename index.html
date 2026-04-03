@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SteamManiLua</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>SteamManiLua</h1>
+      <p class="subtitle">Generate Steam <code>appmanifest_*.acf</code> and launcher <code>.lua</code> files in seconds.</p>
+      <p class="hint">Run with <code>npm start</code> and open <code>http://localhost:3000</code>.</p>
+
+      <section class="card form-grid">
+        <label>
+          App ID
+          <input id="appId" type="number" min="1" value="480" />
+        </label>
+        <label>
+          Game Name
+          <input id="name" type="text" value="Spacewar" />
+        </label>
+        <label>
+          Build ID
+          <input id="buildId" type="text" value="0" />
+        </label>
+        <label>
+          Branch
+          <input id="branch" type="text" value="public" />
+        </label>
+        <label>
+          Install Directory
+          <input id="installdir" type="text" value="Spacewar" />
+        </label>
+        <label>
+          Launch Executable (for Lua)
+          <input id="exe" type="text" value="Spacewar.exe" />
+        </label>
+      </section>
+
+      <section class="card">
+        <label>
+          Depot IDs (comma or newline separated)
+          <textarea id="depots" rows="4" placeholder="480\n1007"></textarea>
+        </label>
+      </section>
+
+      <section class="actions">
+        <button id="generateBtn">Generate</button>
+        <button id="downloadManifestBtn" disabled>Download Manifest</button>
+        <button id="downloadLuaBtn" disabled>Download Lua</button>
+        <button id="downloadZipBtn" disabled>Download ZIP</button>
+      </section>
+
+      <p id="status" class="status">Fill the form and click Generate.</p>
+
+      <section class="preview-grid">
+        <article class="card">
+          <h2>Manifest Preview</h2>
+          <pre id="manifestPreview"></pre>
+        </article>
+        <article class="card">
+          <h2>Lua Preview</h2>
+          <pre id="luaPreview"></pre>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
